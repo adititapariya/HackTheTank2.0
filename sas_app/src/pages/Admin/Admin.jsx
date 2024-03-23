@@ -37,11 +37,35 @@ const Admin = () => {
 
           <main className="content">
             <Topbar setIsSidebar={setIsSidebar} />
-            <Dashboard />
-            {pathname === "/admin/team" && <Team />}
-            {pathname === "/admin/contact" && <Contacts />}
-            {pathname === "/admin/invoices" && <Invoices />}
-            {pathname === "/admin/calendar" && <Calendar />}
+            {pathname === "/admin" && (
+              <>
+                <Dashboard />
+              </>
+            )}
+
+            {/* {pathname !== "/admin/contact" &&
+              pathname !== "/admin" &&
+              pathname !== "/admin/invoices" &&
+              pathname !== "/admin/calendar" && ( */}
+            <>
+              <Team />
+            </>
+            {/* )} */}
+            {/* {pathname === "/admin/contact" && ( */}
+            <>
+              <Contacts />
+            </>
+            {/* )} */}
+            {/* {pathname === "/admin/invoices" && ( */}
+            <>
+              <Invoices />
+            </>
+            {/* )} */}
+            {/* {pathname === "/admin/calendar" && ( */}
+            <>
+              <Calendar />
+            </>
+            {/* )} */}
           </main>
         </div>
       </ThemeProvider>
