@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <div>
         <nav className="fixed w-full z-50 top-0">
-          {pathname !== "/admin" && (
+          {pathname !== "/admin" && pathname !== "/user" && (
             <>
               <ResponsiveAppBar />
             </>
