@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
+import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import Avatar from "@mui/material/Avatar";
 
@@ -116,34 +122,71 @@ const Sidebar = () => {
               setSelected={setSelected}
             />
 
-            {/* <Typography
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Data
+            </Typography>
+
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Pages
+            </Typography>
+            <Item
+              title="Profile Form"
+              to="/form"
+              icon={<PersonOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Calendar"
+              to="/admin/calendar"
+              icon={<CalendarTodayOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="FAQ Page"
+              to="/faq"
+              icon={<HelpOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+
+            <Typography
               variant="h6"
               color={colors.grey[300]}
               sx={{ m: "15px 0 5px 20px" }}
             >
               Charts
-            </Typography> */}
-            {/* <Item
+            </Typography>
+            <Item
               title="Bar Chart"
-              to="/user/bar"
+              to="/bar"
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Pie Chart"
-              to="/user/pie"
+              to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
               title="Line Chart"
-              to="/user/line"
+              to="/line"
               icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
-            /> */}
+            />
           </Box>
         </Menu>
       </ProSidebar>

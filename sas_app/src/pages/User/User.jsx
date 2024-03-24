@@ -3,12 +3,11 @@ import { useState, useEffect } from "react";
 import Topbar from "./Topbar";
 import Sidebar from "./Sidebar";
 import UserDashboard from "./UserDashboard";
-import Pie from "../User/components/PieChart";
-import Bar from "../User/components/BarChart";
-import Line from "../User/components/LineChart";
+import UserCalendar from "./UserCalendar";
 import { useLocation } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "../../theme";
+// import "./Admin.css";
 import "../../index.css";
 
 const User = () => {
@@ -39,9 +38,12 @@ const User = () => {
                 <UserDashboard />
               </>
             )}
-            {/* {pathname === "/user/pie" && <Pie />}
-            {pathname === "/user/bar" && <Bar />}
-            {pathname === "/user/line" && <Line />} */}
+
+            {pathname === "/user/calendar" && (
+              <>
+                <UserCalendar />
+              </>
+            )}
           </main>
         </div>
       </ThemeProvider>
