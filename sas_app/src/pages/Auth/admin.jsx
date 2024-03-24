@@ -3,13 +3,15 @@ import { Grid } from "@mui/material";
 import { getDoc, doc } from "@firebase/firestore";
 import { auth, firestore } from "../../firebase";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "@firebase/auth";
-import DashBoard from "../Admin/Admin";
+import AdminDashboard from "../Admin/Admin";
+import UserDashboard from "../User/User";
 import SignIn from "./Register";
 import { analytics } from "../../firebase";
 import { logEvent } from "@firebase/analytics";
 
 export default function Admin() {
   const [logged, setLogged] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
   const provider = new GoogleAuthProvider();
   const logginFields = ["Name", "Email", "profilePic", "loggedIn"];
 
@@ -19,6 +21,7 @@ export default function Admin() {
       const snap = await getDoc(ref);
       console.log(snap.data(), snap.id);
       if (snap.data().access) {
+        setIsAdmin(true);
         setLogged(true);
         console.log(logged);
       }
@@ -57,6 +60,7 @@ export default function Admin() {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
+        setIsAdmin(false);
         setLogged(false);
         logginFields.forEach((field) => localStorage.removeItem(field));
         sessionStorage.removeItem("loggedIn");
@@ -98,13 +102,16 @@ export default function Admin() {
   }, []);
 
   return (
-      <Grid container>
-        {logged ? (
-          <DashBoard handleSignOut={handleSignOut} />
+    <Grid container>
+      {logged ? (
+        isAdmin ? (
+          <AdminDashboard handleSignOut={handleSignOut} />
         ) : (
-          <SignIn handleSignIn={handleSignIn} />
-        )}
-      </Grid>
-    
+          <UserDashboard handleSignOut={handleSignOut} />
+        )
+      ) : (
+        <SignIn handleSignIn={handleSignIn} />
+      )}
+    </Grid>
   );
 }
