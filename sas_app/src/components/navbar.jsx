@@ -7,18 +7,19 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
+import logo from "../assets/logomain.png";
+import "../components/navbar.css";
 const black = grey[900];
 
-const pages = ["AboutUs", "Services", "Treatment"];
-const settings = ["Dashboard", "Logout"];
-const to = ["/admin", "/home"];
+const pages = [];
+const settings = ["Dashboard"];
+const to = "/auth/register";
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -50,7 +51,9 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+           */}
+          <img src={logo} alt="logo" className="logomain" />
           <Typography
             variant="h6"
             noWrap
@@ -65,9 +68,7 @@ function ResponsiveAppBar() {
               color: "inherit",
               textDecoration: "none",
             }}
-          >
-            LOGO
-          </Typography>
+          ></Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -138,9 +139,13 @@ function ResponsiveAppBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
+              <Button
+                onClick={handleOpenUserMenu}
+                sx={{ p: 0, color: "#FFFFFF" }}
+                variant="text"
+              >
+                Login
+              </Button>
             </Tooltip>
             <Menu
               sx={{ mt: "45px" }}
@@ -160,8 +165,9 @@ function ResponsiveAppBar() {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                  <Link to={to} />
+                  <Link to={to} className="setting">
+                    <Typography textAlign="center">{setting}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>

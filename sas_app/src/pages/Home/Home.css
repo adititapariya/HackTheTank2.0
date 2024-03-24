@@ -67,6 +67,9 @@
   justify-content: center;
   text-align: center;
 }
+.sec2text {
+  background-color: rgb(223, 206, 185);
+}
 .sec2text h4 {
   font-style: italic;
   color: rgb(11, 69, 98);
