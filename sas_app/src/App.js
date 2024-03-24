@@ -31,6 +31,9 @@ function App() {
         </nav>
         <Routes>
           <Route path="/admin/team" element={<Admin />}></Route>
+          <Route path="/user/bar" element={<User />}></Route>
+          <Route path="/user/pie" element={<User />}></Route>
+          <Route path="/user/line" element={<User />}></Route>
           <Route path="/admin/invoices" element={<Admin />}></Route>
           <Route path="/admin/contacts" element={<Admin />}></Route>
           <Route path="/auth/admin" element={<Register />}></Route>
