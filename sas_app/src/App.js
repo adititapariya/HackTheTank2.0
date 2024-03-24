@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Admin from "../src/pages/Admin/Admin";
+import Register from "../src/pages/Auth/Register";
+import Auth from "../src/pages/Auth/admin";
 import { useLocation } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import User from "./pages/User/User";
@@ -28,6 +30,11 @@ function App() {
           )}
         </nav>
         <Routes>
+          <Route path="/admin/team" element={<Admin />}></Route>
+          <Route path="/admin/invoices" element={<Admin />}></Route>
+          <Route path="/admin/contacts" element={<Admin />}></Route>
+          <Route path="/auth/admin" element={<Register />}></Route>
+          <Route path="/auth/register" element={<Auth />}></Route>
           <Route path="/admin" element={<Admin />}></Route>
           <Route path="/" element={<Home />}></Route>
           <Route path="/user" element={<User />}></Route>

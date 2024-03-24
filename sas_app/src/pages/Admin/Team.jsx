@@ -74,6 +74,7 @@ const Team = () => {
       <Box
         m="40px 0 0 0"
         height="75vh"
+        width="1200px"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",

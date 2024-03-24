@@ -42,6 +42,7 @@ const Dashboard = () => {
       {/* GRID & CHARTS */}
       <Box
         display="grid"
+        width="1200px"
         gridTemplateColumns="repeat(12, 1fr)"
         gridAutoRows="140px"
         gap="20px"
