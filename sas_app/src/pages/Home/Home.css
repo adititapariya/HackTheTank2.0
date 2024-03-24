@@ -1,3 +1,7 @@
+.home {
+  font-family: "Source Sans 3", sans-serif;
+}
+
 .heroimg {
   z-index: 0;
   position: relative;
@@ -14,18 +18,108 @@
   position: absolute;
   font-size: 45px;
   top: 40vh;
-  left: 30vw;
+  left: 28vw;
   text-align: center;
   justify-content: center;
+}
+.section2main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 120vh;
 }
 .section2 {
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100vh;
 }
-.aboutUs {
+.sec2img img {
+  z-index: 0;
+  position: relative;
+  left: 50px;
+  width: 100%;
+  height: 95%;
+  object-fit: contain;
+  opacity: 0.9;
+}
+.sec2text {
+  position: relative;
+  background-color: #ffffff;
+  width: 40%;
+  top: 40px;
+  right: 10px;
+  height: 90vh;
+  z-index: 1;
+  text-align: center;
+  justify-content: center;
+  padding: 40px;
+}
+.sec2head h2 {
+  font-style: italic;
+  color: rgb(11, 69, 98);
+  justify-content: center;
+  text-align: center;
+}
+.sec2head h1 {
+  /* font-style: italic; */
+  color: rgb(28, 28, 28);
+  justify-content: center;
+  text-align: center;
+}
+.sec2text h4 {
+  font-style: italic;
+  color: rgb(11, 69, 98);
+}
+.sec2text p {
+  color: rgb(85, 83, 83);
+  text-align: justify;
+  justify-content: center;
+}
+
+/*
+.aboutus {
+  display: flex;
+  position: absolute;
   text-align: center;
   justify-content: center;
   width: 100%;
   height: 20%;
+  border-color: black;
+  border-style: solid;
+  margin-bottom: 5px;
 }
+.h2 {
+  font-size: 40px;
+}
+.Threewaydivision {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-content: space-evenly;
+}
+.divi1 {
+  width: 30%;
+  border: 2px;
+  height: 70%;
+  border-color: black;
+  border-style: solid;
+}
+.divi2 {
+  width: 30%;
+  border: 2px;
+  height: 70%;
+  border-color: black;
+  border-style: solid;
+}
+.divi3 {
+  width: 30%;
+  border: 2px;
+  height: 70%;
+  border-color: black;
+  border-style: solid;
+}*/

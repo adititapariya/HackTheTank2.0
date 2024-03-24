@@ -13,10 +13,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 const black = grey[900];
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const pages = ["AboutUs", "Services", "Treatment"];
+const settings = ["Dashboard", "Logout"];
+const to = ["/admin", "/home"];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -39,9 +41,12 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar
-      position="sticky"
-      color="transparent"
-      //   style={{ background: "transparent", boxShadow: "none" }}
+      position="fixed"
+      style={{
+        position: "fixed",
+        background: black,
+        boxShadow: "none",
+      }}
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -156,6 +161,7 @@ function ResponsiveAppBar() {
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
+                  <Link to={to} />
                 </MenuItem>
               ))}
             </Menu>
